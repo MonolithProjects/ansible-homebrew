@@ -6,7 +6,7 @@
 [![GitHub Actions](https://github.com/MonolithProjects/ansible-homebrew/workflows/molecule%20test/badge.svg?branch=main)](https://github.com/MonolithProjects/ansible-homebrew/actions)
 [![License](https://img.shields.io/github/license/MonolithProjects/ansible-homebrew)](https://github.com/MonolithProjects/ansible-homebrew/blob/main/LICENSE)
 
-This role will install Homebrew for Linux system and install formulae using it.
+This Ansible Role will install Homebrew for Linux system and install formulae using it.
 
 ## Requirements
 
