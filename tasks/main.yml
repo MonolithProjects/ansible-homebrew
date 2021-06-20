@@ -1,0 +1,12 @@
+---
+# - include_tasks: assert.yml
+#   tags:
+#     - install
+
+- include_tasks: prereqs.yml
+  tags:
+    - install
+
+- include_tasks: install.yml
+  tags:
+    - install

@@ -1,0 +1,8 @@
+---
+- name: Test playbook
+  user: ansible
+  hosts: all
+  gather_facts: yes
+  become: yes
+  roles:
+    - ansible-homebrew

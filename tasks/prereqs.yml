@@ -1,0 +1,42 @@
+---
+- block:
+  - name: Install the 'Development tools' package group
+    yum:
+      name: "@Development tools"
+      state: present
+  
+  - name: Install prereq rpm packages
+    yum:
+      name: "{{ packages }}"
+      state: present
+    vars:
+      packages:
+        - curl
+        - file
+        - git
+        - procps-ng
+
+  - name: Install Fedora 30+ rpm package
+    yum:
+      name: libxcrypt-compat
+      state: present
+    when:
+      - ansible_distribution == "Fedora"
+      - ansible_distribution_major_version >= "30"
+  when:
+    - ansible_pkg_mgr == "yum" or ansible_pkg_mgr == "dnf"
+
+- block:  
+  - name: Install prereq deb packages
+    yum:
+      name: "{{ packages }}"
+      state: present
+    vars:
+      packages:
+        - build-essential
+        - curl
+        - file
+        - git
+        - procps
+  when:
+    - ansible_pkg_mgr == "apt"

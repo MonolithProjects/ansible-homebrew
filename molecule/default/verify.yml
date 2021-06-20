@@ -1,0 +1,11 @@
+---
+- name: validate Homebrew
+  user: ansible
+  hosts: all
+  gather_facts: yes
+  become: yes
+  vars:
+    brew_formulae:
+      - aws-vault
+  roles:
+    - ansible-homebrew
