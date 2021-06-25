@@ -2,24 +2,20 @@
 - name: Clone Homebrew GitHub repo
   ansible.builtin.git:
     repo: "{{ homebrew_git_repo }}"
-    dest: "{{ homebrew_dir }}"
+    dest: "{{ homebrew_dir }}/Homebrew"
     version: "{{ homebrew_release }}"
+  become: false
 
 - name: Create bin directory for brew
   file:
-    path: "{{ ansible_user_dir }}/.linuxbrew/bin"
+    path: "/home/{{ ansible_user }}/.linuxbrew/bin"
     state: directory
+    owner: "{{ ansible_user }}"
     recurse: true
 
 - name: Create a symbolic link for brew
   ansible.builtin.file:
-    src: "{{ homebrew_dir }}/bin/brew"
-    dest: "{{ ansible_user_dir }}/.linuxbrew/bin/"
-    owner: "{{ ansible_user_id }}"
-    group: "{{ ansible_user_gid }}"
+    src: "{{ homebrew_dir }}/Homebrew/bin/brew"
+    dest: "/home/{{ ansible_user }}/.linuxbrew/bin/brew"
+    owner: "{{ ansible_user }}"
     state: link
-
-# - name: Add homebrew path to system-wide $PATH.
-#   copy:
-#     dest: /etc/profile.d/homebrew.sh
-#     content: 'PATH=$PATH:~/.linuxbrew/bin/brew'
