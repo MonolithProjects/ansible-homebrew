@@ -1,8 +1,8 @@
 # Homebrew for Linux
 
-[![Galaxy Quality](https://img.shields.io/ansible/quality/00000?style=flat&logo=ansible)](https://galaxy.ansible.com/monolithprojects/homebrew)
+[![Galaxy Quality](https://img.shields.io/ansible/quality/55459?style=flat&logo=ansible)](https://galaxy.ansible.com/monolithprojects/homebrew)
 [![Role version](https://img.shields.io/github/v/release/MonolithProjects/ansible-homebrew)](https://galaxy.ansible.com/monolithprojects/homebrew)
-[![Role downloads](https://img.shields.io/ansible/role/d/00000)](https://galaxy.ansible.com/monolithprojects/homebrew)
+[![Role downloads](https://img.shields.io/ansible/role/d/55459)](https://galaxy.ansible.com/monolithprojects/homebrew)
 [![GitHub Actions](https://github.com/MonolithProjects/ansible-homebrew/workflows/molecule%20test/badge.svg?branch=main)](https://github.com/MonolithProjects/ansible-homebrew/actions)
 [![License](https://img.shields.io/github/license/MonolithProjects/ansible-homebrew)](https://github.com/MonolithProjects/ansible-homebrew/blob/main/LICENSE)
 
@@ -33,6 +33,9 @@ This Ansible Role will install Homebrew for Linux system and install formulae us
 This is a copy from `defaults/main.yml`
 
 ```yaml
+# Homebrew packages to be installed
+brew_formulae: []
+
 # Homebrew git repo
 homebrew_git_repo: "https://github.com/Homebrew/brew"
 

@@ -1,4 +1,7 @@
 ---
+# Homebrew packages to be installed
+brew_formulae: []
+
 # Homebrew git repo
 homebrew_git_repo: "https://github.com/Homebrew/brew"
 
