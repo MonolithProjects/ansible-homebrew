@@ -1,12 +1,12 @@
 ---
 - block:
   - name: Install the 'Development tools' package group
-    yum:
+    ansible.builtin.yum:
       name: "@Development tools"
       state: present
   
   - name: Install prereq rpm packages
-    yum:
+    ansible.builtin.yum:
       name: "{{ packages }}"
       state: present
     vars:
@@ -17,7 +17,7 @@
         - procps-ng
 
   - name: Install Fedora 30+ rpm package
-    yum:
+    ansible.builtin.yum:
       name: libxcrypt-compat
       state: present
     when:
@@ -28,7 +28,7 @@
 
 - block:  
   - name: Install prereq deb packages
-    apt:
+    ansible.builtin.apt:
       name: "{{ packages }}"
       state: present
     vars:

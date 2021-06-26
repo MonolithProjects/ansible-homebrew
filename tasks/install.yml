@@ -7,7 +7,7 @@
   become: false
 
 - name: Create bin directory for brew
-  file:
+  ansible.builtin.file:
     path: "/home/{{ ansible_user }}/.linuxbrew/bin"
     state: directory
     owner: "{{ ansible_user }}"
