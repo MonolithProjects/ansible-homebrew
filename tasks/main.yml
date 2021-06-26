@@ -1,8 +1,4 @@
 ---
-# - include_tasks: assert.yml
-#   tags:
-#     - install
-
 - include_tasks: prereqs.yml
   tags:
     - install
@@ -15,3 +11,8 @@
   tags:
     - install
     - path
+
+- include_tasks: formulae.yml
+  tags:
+    - formula
+    - formulae

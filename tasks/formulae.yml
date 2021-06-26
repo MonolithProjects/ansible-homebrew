@@ -1,0 +1,7 @@
+---
+- name: Install Formula
+  community.general.homebrew:
+    name: "{{ brew_formulae }}"
+    state: present
+    path: "/home/{{ ansible_user }}/.linuxbrew/bin"
+  become: false

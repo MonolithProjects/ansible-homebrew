@@ -1,9 +1,0 @@
----
-- name: Check variables (RUN ONCE)
-  assert:
-    that:
-      - ...
-    fail_msg: "..."
-  run_once: yes
-  tags:
-    - install

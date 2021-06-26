@@ -1,4 +1,4 @@
-# Homebrew for Linux (MVP)
+# Homebrew for Linux
 
 [![Galaxy Quality](https://img.shields.io/ansible/quality/00000?style=flat&logo=ansible)](https://galaxy.ansible.com/monolithprojects/homebrew)
 [![Role version](https://img.shields.io/github/v/release/MonolithProjects/ansible-homebrew)](https://galaxy.ansible.com/monolithprojects/homebrew)
@@ -12,9 +12,15 @@ This Ansible Role will install Homebrew for Linux system and install formulae us
 
 * System must have access to the GitHub.
 
-## Supported CPU architecture:
+## Supported Linux Shells:
+
+- bash
+- fish
+
+## Supported CPU architectures:
 
 * AMD64, x86_64
+
 ## Tested on:
 
 * CentOS/RHEL 7,8
@@ -27,7 +33,14 @@ This Ansible Role will install Homebrew for Linux system and install formulae us
 This is a copy from `defaults/main.yml`
 
 ```yaml
+# Homebrew git repo
+homebrew_git_repo: "https://github.com/Homebrew/brew"
 
+# Homebrew directory
+homebrew_dir: "/home/{{ ansible_user }}/.linuxbrew"
+
+# Homebrew release (default is the master github repo)
+homebrew_release: "master"
 ```
 
 ## Example Playbook
@@ -42,7 +55,7 @@ In this example ...
   become: yes
   vars:
     brew_formulae:
-      - aws-vault
+      - helm
   roles:
     - role: monolithprojects.homebrew
 ```

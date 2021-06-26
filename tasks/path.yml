@@ -1,0 +1,25 @@
+---
+- name: Add homebrew path to system-wide $PATH for bash shell (Debian OS Family).
+  ansible.builtin.lineinfile:
+    path: "/home/{{ ansible_user }}/.profile"
+    line: "PATH=$PATH:~/.linuxbrew/bin"
+    owner: "{{ ansible_user }}"
+    create: yes
+  when: 
+    - ansible_user_shell == "/bin/bash" and ansible_os_family == "Debian"
+
+- name: Add homebrew path to system-wide $PATH for bash shell (RedHat OS Family).
+  ansible.builtin.lineinfile:
+    path: "/home/{{ ansible_user }}/.bash_profile"
+    line: "PATH=$PATH:~/.linuxbrew/bin"
+    owner: "{{ ansible_user }}"
+    create: yes
+  when: 
+    - ansible_user_shell == "/bin/bash" and ansible_os_family == "RedHat"
+
+- name: Add homebrew path to system-wide $PATH for fish shell.
+  ansible.builtin.copy:
+    dest: "/home/{{ ansible_user }}/.config/fish/conf.d/brew.fish"
+    content: "set -gx PATH $PATH /home/{{ ansible_user }}/.linuxbrew/bin"
+    owner: "{{ ansible_user }}"
+  when: ansible_user_shell == "/bin/fish" or ansible_user_shell == "/usr/bin/fish"
