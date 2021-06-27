@@ -3,9 +3,10 @@
   user: ansible
   hosts: all
   gather_facts: true
-  become: true
-  roles:
-    - ansible-homebrew
-  task:
-    - command: "/home/{{ ansible_user }}/.linuxbrew/bin/brew"
-      become: false
+  become: false
+  tasks:
+    - name: Install Formula
+      community.general.homebrew:
+        name: run
+        state: present
+        path: "/home/{{ ansible_user }}/.linuxbrew/bin"

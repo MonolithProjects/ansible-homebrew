@@ -3,7 +3,7 @@
 [![Galaxy Quality](https://img.shields.io/ansible/quality/55459?style=flat&logo=ansible)](https://galaxy.ansible.com/monolithprojects/homebrew)
 [![Role version](https://img.shields.io/github/v/release/MonolithProjects/ansible-homebrew)](https://galaxy.ansible.com/monolithprojects/homebrew)
 [![Role downloads](https://img.shields.io/ansible/role/d/55459)](https://galaxy.ansible.com/monolithprojects/homebrew)
-[![GitHub Actions](https://github.com/MonolithProjects/ansible-homebrew/workflows/molecule%20test/badge.svg?branch=main)](https://github.com/MonolithProjects/ansible-homebrew/actions)
+[![GitHub Actions](https://github.com/MonolithProjects/ansible-homebrew/workflows/molecule%20test/badge.svg)](https://github.com/MonolithProjects/ansible-homebrew/actions)
 [![License](https://img.shields.io/github/license/MonolithProjects/ansible-homebrew)](https://github.com/MonolithProjects/ansible-homebrew/blob/main/LICENSE)
 
 This Ansible Role will install Homebrew for Linux system and install formulae using it.
