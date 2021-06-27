@@ -17,8 +17,6 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - os: "centos7"
-            tag: "latest"
           - os: "centos8"
             tag: "latest"
           - os: "debian9"
