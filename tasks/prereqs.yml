@@ -29,6 +29,7 @@
 - block:  
   - name: Install prereq deb packages
     ansible.builtin.apt:
+      update_cache: true
       name: "{{ packages }}"
       state: present
     vars:
