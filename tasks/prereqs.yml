@@ -8,7 +8,7 @@
   - name: Install prereq rpm packages
     ansible.builtin.yum:
       name: "{{ packages }}"
-      state: present
+      state: latest
     vars:
       packages:
         - curl
@@ -31,7 +31,7 @@
     ansible.builtin.apt:
       update_cache: true
       name: "{{ packages }}"
-      state: present
+      state: latest
     vars:
       packages:
         - build-essential
