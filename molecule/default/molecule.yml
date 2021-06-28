@@ -15,8 +15,8 @@ lint: |
 driver:
   name: docker
 platforms:
-  - name: "${os:-centos7}-${tag:-latest}"
-    image: "${namespace:-monolithprojects}/systemd-${os:-centos7}:${tag:-latest}"
+  - name: "${os:-rockylinux8}-${tag:-latest}"
+    image: "${namespace:-monolithprojects}/systemd-${os:-rockylinux8}:${tag:-latest}"
     command: /sbin/init
     tmpfs:
       - /run

@@ -3,7 +3,7 @@
   user: ansible
   hosts: all
   gather_facts: true
-  become: false
+  become: true
   tasks:
     - name: Install Formula
       community.general.homebrew:

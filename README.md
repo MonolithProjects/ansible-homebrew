@@ -26,6 +26,7 @@ This Ansible Role will install Homebrew for Linux system and install formulae us
 * CentOS/RHEL 8
 * Debian 9,10
 * Fedora 35
+* Rocky Linux 8
 * Ubuntu 18,20
 
 ## Role Variables
@@ -40,7 +41,7 @@ brew_formulae: []
 homebrew_git_repo: "https://github.com/Homebrew/brew"
 
 # Homebrew directory
-homebrew_dir: "/home/{{ ansible_user }}/.linuxbrew"
+homebrew_dir: "/home/linuxbrew/.linuxbrew"
 
 # Homebrew release (default is the master github repo)
 homebrew_release: "master"
