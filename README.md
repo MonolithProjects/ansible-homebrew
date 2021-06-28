@@ -40,7 +40,7 @@ brew_formulae: []
 homebrew_git_repo: "https://github.com/Homebrew/brew"
 
 # Homebrew directory
-homebrew_dir: "/home/{{ ansible_user }}/.linuxbrew"
+homebrew_dir: "/home/linuxbrew/.linuxbrew"
 
 # Homebrew release (default is the master github repo)
 homebrew_release: "master"

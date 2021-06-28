@@ -4,13 +4,13 @@
     repo: "{{ homebrew_git_repo }}"
     dest: "{{ homebrew_dir }}/Homebrew"
     version: "{{ homebrew_release }}"
-  become: false
 
 - name: Create bin directory for brew
   ansible.builtin.file:
     path: "/home/{{ ansible_user }}/.linuxbrew/bin"
     state: directory
     owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
     recurse: true
 
 - name: Create a symbolic link for brew
@@ -18,4 +18,5 @@
     src: "{{ homebrew_dir }}/Homebrew/bin/brew"
     dest: "/home/{{ ansible_user }}/.linuxbrew/bin/brew"
     owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
     state: link
