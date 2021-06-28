@@ -24,7 +24,7 @@
       - ansible_distribution == "Fedora"
       - ansible_distribution_major_version >= "30"
   when:
-    - (ansible_pkg_mgr == "yum" or ansible_pkg_mgr == "dnf") and ansible_os_family == "RedHat"
+    - (ansible_pkg_mgr == "yum" or ansible_pkg_mgr == "dnf") and (ansible_os_family == "RedHat" or ansible_os_family == "Rocky")
 
 - block:  
   - name: Install prereq deb packages
