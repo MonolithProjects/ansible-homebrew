@@ -40,11 +40,11 @@ brew_formulae: []
 # Homebrew git repo
 homebrew_git_repo: "https://github.com/Homebrew/brew"
 
-# Homebrew directory
-homebrew_dir: "/home/linuxbrew/.linuxbrew"
-
 # Homebrew release (default is the master github repo)
 homebrew_release: "master"
+
+# Homebrew user
+homebrew_user: "{{ lookup('env', 'USER') }}"
 ```
 
 ## Example Playbook
@@ -55,11 +55,11 @@ In this example ...
 ---
 - name: Install Homebrew and aws-vault using homebrew
   hosts: all
-  user: ansible
+  user: mike
   become: yes
   vars:
     brew_formulae:
-      - helm
+      - aws-vault
   roles:
     - role: monolithprojects.homebrew
 ```

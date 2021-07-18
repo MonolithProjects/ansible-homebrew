@@ -4,6 +4,8 @@
   hosts: all
   gather_facts: yes
   become: true
+  vars:
+    homebrew_user: ansible
   pre_tasks:
     - debug:
         msg: "{{ ansible_os_family }}"
