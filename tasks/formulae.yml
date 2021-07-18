@@ -3,5 +3,6 @@
   community.general.homebrew:
     name: "{{ brew_formulae }}"
     state: present
-    path: "/home/{{ ansible_user }}/.linuxbrew/bin"
-  become: false
+    path: "/home/{{ homebrew_user }}/.linuxbrew/bin"
+  become_user: "{{ homebrew_user }}"
+  become: yes
