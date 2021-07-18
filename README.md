@@ -55,11 +55,11 @@ In this example ...
 ---
 - name: Install Homebrew and aws-vault using homebrew
   hosts: all
-  user: ansible
+  user: mike
   become: yes
   vars:
     brew_formulae:
-      - helm
+      - aws-vault
   roles:
     - role: monolithprojects.homebrew
 ```
