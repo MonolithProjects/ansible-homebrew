@@ -35,3 +35,12 @@
     owner: "{{ homebrew_user }}"
     mode: 0644
   when: user_shell.stdout == "fish"
+
+- name: Add homebrew path to system-wide $PATH for zsh shell.
+  ansible.builtin.lineinfile:
+    path: "/home/{{ homebrew_user }}/.zprofile"
+    line: "PATH=$PATH:~/.linuxbrew/bin"
+    owner: "{{ homebrew_user }}"
+    mode: 0644
+    create: yes
+  when: user_shell.stdout == "zsh"
