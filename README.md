@@ -16,6 +16,7 @@ This Ansible Role will install Homebrew for Linux system and install formulae us
 
 - bash
 - fish
+- zsh
 
 ## Supported CPU architectures:
 
