@@ -6,7 +6,7 @@
     description: Install Homebrew for Linux
     company: MonolithProjects
     license: "license (MIT)"
-    min_ansible_version: 2.9
+    min_ansible_version: 2.10
     platforms:
       - name: EL
         versions:
@@ -18,10 +18,15 @@
           - 30
           - 31
           - 32
+          - 33
+          - 34
+          - 35
+          - 36
       - name: Debian
         versions:
           - buster
           - stretch
+          - bullseye
       - name: Ubuntu
         versions:
           - xenial

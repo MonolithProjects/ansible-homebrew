@@ -25,7 +25,7 @@ This Ansible Role will install Homebrew for Linux system and install formulae us
 ## Tested on:
 
 * CentOS/RHEL 8
-* Debian 9,10
+* Debian 10,11
 * Fedora 35
 * Rocky Linux 8
 * Ubuntu 18,20

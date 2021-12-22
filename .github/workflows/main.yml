@@ -19,9 +19,9 @@ jobs:
         config:
           - os: "centos8"
             tag: "latest"
-          - os: "debian9"
-            tag: "latest"
           - os: "debian10"
+            tag: "latest"
+          - os: "debian11"
             tag: "latest"
           - os: "fedora34"
             tag: "latest"
